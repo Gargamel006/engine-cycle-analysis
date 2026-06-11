@@ -399,7 +399,7 @@ with left:
                         x=x_values,
                         y=y_data[metric],
                         yaxis=yaxis_name,
-                        mode="lines+markers",  # 学术图表标志性的“点线结合”
+                        mode="lines+markers",  
                         name=legend_name,
                         line=dict(
                             width=1.5,  # 线条调细，显得更严谨
@@ -409,7 +409,7 @@ with left:
                         marker=dict(
                             size=6,
                             symbol=academic_symbols[i % len(academic_symbols)],
-                            color="white", # 标记内部设为空心（白色），学术界非常喜欢这种风格
+                            color="white", 
                             line=dict(width=1.5, color=academic_colors[i % len(academic_colors)])
                         ),
                         connectgaps=False,
@@ -422,7 +422,7 @@ with left:
                 )
 
         fig.update_layout(
-            template="simple_white",  # 启用学术图表最常用的纯白底色主题
+            template="simple_white",  
             plot_bgcolor="white",
             paper_bgcolor="white",
             font=dict(
@@ -433,7 +433,7 @@ with left:
             height=560,
             margin={"l": 70, "r": 30, "t": 40, "b": 70},
             hovermode="x unified",
-            # 将图例放到图表内部右上角，并加上黑框，这是学术图表的标准做法
+            # 将图例放到图表内部右上角，并加上黑框
             legend=dict(
                 orientation="v",
                 yanchor="top",
@@ -448,13 +448,13 @@ with left:
             xaxis=dict(
                 title=axis_label(x_key, PARAM_CONFIG),
                 range=[x_range[0], x_range[1]],
-                showgrid=False,           # 关掉花哨的网格线
-                zeroline=False,           # 关掉多余的零线
-                showline=True,            # 显示坐标轴线
-                linewidth=1.5,            # 加粗坐标轴
-                linecolor='black',        # 纯黑坐标轴
-                mirror=True,              # 开启顶部镜像边框（形成封闭的方框）
-                ticks='inside',           # 刻度线向内
+                showgrid=False,           
+                zeroline=False,          
+                showline=True,            
+                linewidth=1.5,            
+                linecolor='black',        
+                mirror=True,              
+                ticks='inside',          
                 tickwidth=1.5,
                 tickcolor='black',
                 ticklen=6,
@@ -497,7 +497,7 @@ with left:
         st.plotly_chart(
             fig,
             width="stretch",
-            theme=None,  # 禁用 Streamlit 默认主题，强制使用 Plotly 的学术设定！
+            theme=None,  
             config={
                 "scrollZoom": True,
                 "displaylogo": False,
